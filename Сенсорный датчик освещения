@@ -1,0 +1,18 @@
+int LED = 12; 
+int FOTO = A5; 
+void setup() 
+{ 
+ pinMode(LED, OUTPUT); 
+ Serial.begin(9600); 
+} 
+ 
+void loop() 
+{ 
+ Serial.println(analogRead(A5)); 
+ if (analogRead(FOTO)> 150) 
+ { 
+ digitalWrite(LED, HIGH); 
+ } else { 
+ digitalWrite(LED, LOW); 
+ } 
+}
