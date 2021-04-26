@@ -1,0 +1,24 @@
+int flamePin = A0;  // A0 for the flame
+int beepPin = 9;  // digital pin 9 for the buzzer
+int val = 0;  // data
+
+void setup()
+{
+    pinMode( beepPin,  OUTPUT) ;
+    pinMode( flamePin,  INPUT) ;
+    Serial.begin( 9600) ;
+}
+
+void loop()
+{
+     val = analogRead( flamePin); // read the analog value of the sensor 
+     Serial.println( val) ; // display the analog value
+     if  ( val >= 600) // when the analog value is larger then 600 the buzzer will buzz
+     {
+          digitalWrite ( beepPin, HIGH) ;
+      }    else
+      {
+          digitalWrite ( beepPin, LOW) ;
+      } 
+      delay (500) ;
+}
